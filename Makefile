@@ -6,6 +6,14 @@ test:
 	python -m pytest -vv --cov=hello --cov=greeting tests
 	python -m pytest --nbval notebook.ipynb # tests our jupyter notebook
 
+debug:
+	python -m pytest -vv --pdb #Debugger is invoked
+
+
+debugthree:
+	#not working the way Iexpect
+	python -m pytest -vv --pdb --maxfail=4 # drop to PDB for first three failures
+
 format:	
 	black *.py 
 
