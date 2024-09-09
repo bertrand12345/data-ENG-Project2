@@ -5,7 +5,7 @@ install:
 
 test:
 	python -m pytest -vvv --cov=hello --cov=greeting\
-	 --cov=smath --cov=web --cov=nlplogic.corenlp tests 
+	 --cov=smath --cov=web  tests 
 	python -m pytest --nbval notebook.ipynb # tests our jupyter notebook
 	#python -m pytest -v tests/test_web.py # if you want to test web
 
@@ -21,10 +21,10 @@ debugthree:
 	python -m pytest -vv --pdb --maxfail=4 # drop to PDB for first three failures
 
 format:	
-	black *.py  nlplogic
+	black *.py  
 
 lint:
-	pylint --disable=R,C *.py nlplogic/*.py
+	pylint --disable=R,C *.py
 
 
 
