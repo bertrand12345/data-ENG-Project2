@@ -9,3 +9,4 @@ Flask==3.0.3
 click==8.1.7
 textblob==0.18.0.post0
 wikipedia==1.4.0
+fire==0.6.0
