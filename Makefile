@@ -5,7 +5,7 @@ install:
 
 test:
 	python -m pytest -vvv --cov=hello --cov=greeting\
-	 --cov=smath --cov=web --cov=nlplogic tests 
+	 --cov=smath --cov=web --cov=nlplogic.corenlp tests 
 	python -m pytest --nbval notebook.ipynb # tests our jupyter notebook
 	#python -m pytest -v tests/test_web.py # if you want to test web
 
