@@ -12,11 +12,11 @@ def search_wikipedia(name):
         return []
 
 
-def summarize_wikipedia(name, sentences=3):
+def summarize_wikipedia(name1, sentences=3):
     """Summarize Wikipedia article for the given name."""
-    print(f"Finding Wikipedia summary for: {name}")
+    print(f"Finding Wikipedia summary for: {name1}")
     try:
-        return wikipedia.summary(name, sentences=sentences)
+        return wikipedia.summary(name1, sentences=sentences)
     except wikipedia.exceptions.WikipediaException as e:
         print(f"An error occurred while summarizing: {e}")
         return ""
@@ -27,18 +27,12 @@ def get_text_blob(text):
     return TextBlob(text)
 
 
-def get_phrases(name):
+def get_phrases(name2):
     """Find Wikipedia summary for the name and return noun phrases."""
-    summary = summarize_wikipedia(name)
+    summary = summarize_wikipedia(name2)
     if summary:
         blob = get_text_blob(summary)
         return blob.noun_phrases
     else:
         return []
 
-
-# Example usage:
-if __name__ == "__main__":
-    name = "Python (programming language)"
-    phrases = get_phrases(name)
-    print("Noun phrases:", phrases)
